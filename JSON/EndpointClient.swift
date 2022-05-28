@@ -29,7 +29,7 @@ public final class EndpointClient {
 
     private let applicationSettings: ApplicationSettingsService
     private var masterServerURL: String { "https://api.magicthegathering.io" } // адрес сервера
-//    private var masterServerURL: String { "http://localhost:5055" }
+//    private var masterServerURL: String { "http://localhost:8088" }
 
     // MARK: - Initialization
 
@@ -201,7 +201,8 @@ public final class EndpointClient {
     {
         guard let data = data else { throw EndpointClientError.noParsingData }
         do {
-            print("data = \(String(describing: (String(data: data, encoding: .utf8))))")
+//            print("data = \(String(describing: (String(data: data, encoding: .utf8))))")
+//            decodeJSONOld(string: data)
             return try decoder.decode(D.self, from: data)
         } catch {
             throw error

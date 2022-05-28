@@ -19,13 +19,14 @@ class ViewController: UIViewController {
     
     func executeCall() {
         let endpoint = GetNameEndpoint()
-        let completion: EndpointClient.ObjectEndpointCompletion<String> = { result, response in
+        let completion: EndpointClient.ObjectEndpointCompletion<Cards> = { result, response in
             guard let responseUnwrapped = response else { return }
 
             print("\n\n response = \(responseUnwrapped.allHeaderFields) ;\n \(responseUnwrapped.statusCode) \n")
             switch result {
             case .success(let team):
-                print("team = \(team)")
+                self.printCards(jsonCards: team)
+//                print("team = \(team)")
                 
             case .failure(let error):
                 print(error)
@@ -34,11 +35,22 @@ class ViewController: UIViewController {
         
         endpointClient.executeRequest(endpoint, completion: completion)
     }
-
-
+    
+    private func printCards(jsonCards: JSON.Cards) {
+        for (index, card) in jsonCards.cards.enumerated() {
+            print("""
+                Информация о \(index + 1)й карте:
+                        имя : \(card.name ?? "")
+                        тип : \(card.type ?? "")
+                   описание : \(card.text ?? "")
+            стоимость карты : \(card.manaCost?.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "") ?? "")
+                 цвет карты : \(card.colors?.joined(separator: ", ") ?? "цвет отсутствует")\n
+            """)
+        }
+    }
 }
 
-final class GetNameEndpoint: ObjectResponseEndpoint<String> {
+final class GetNameEndpoint: ObjectResponseEndpoint<Cards> {
     
     override var method: RESTClient.RequestType { return .get }
     override var path: String { "/v1/cards" }
@@ -47,7 +59,8 @@ final class GetNameEndpoint: ObjectResponseEndpoint<String> {
     override init() {
         super.init()
 
-        queryItems = [URLQueryItem(name: "name", value: "Black Lotus")]
+//        queryItems = [URLQueryItem(name: "name", value: "Black Lotus")]
+        queryItems = [URLQueryItem(name: "name", value: "Opt")]
     }
     
 }
@@ -71,7 +84,7 @@ func decodeJSONOld() {
 
     do {
         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-            if let names = json["team"] as? [String] {
+            if let names = json["cards"] as? [String] {
                 print(names)
             }
         }
