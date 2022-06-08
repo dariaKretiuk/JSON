@@ -70,22 +70,118 @@
 		FF4CB13B283F5CDF00E32F04 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				FFD309E7285084D40067DB7E /* Resources */,
+				FFD309E8285084DA0067DB7E /* Sources */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		FFD309E7285084D40067DB7E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF4CB145283F5CE500E32F04 /* Assets.xcassets */,
+				FFD309EA285084E80067DB7E /* Configs */,
+				FFD309E9285084E10067DB7E /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FFD309E8285084DA0067DB7E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FFD309EC285084F10067DB7E /* Scenes */,
+				FFD309EB285084ED0067DB7E /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FFD309E9285084E10067DB7E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FF4CB142283F5CDF00E32F04 /* Main.storyboard */,
+				FF4CB147283F5CE500E32F04 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FFD309EA285084E80067DB7E /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				FF4CB14A283F5CE500E32F04 /* Info.plist */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		FFD309EB285084ED0067DB7E /* App */ = {
+			isa = PBXGroup;
+			children = (
 				FF4CB13C283F5CDF00E32F04 /* AppDelegate.swift */,
 				FF4CB13E283F5CDF00E32F04 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FFD309EC285084F10067DB7E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FFD309EF2850B8F20067DB7E /* Settings */,
+				FFD309EE2850B8E40067DB7E /* Request */,
+				FFD309ED285085230067DB7E /* Model */,
 				FF4CB140283F5CDF00E32F04 /* ViewController.swift */,
-				FF4CB142283F5CDF00E32F04 /* Main.storyboard */,
-				FF4CB145283F5CE500E32F04 /* Assets.xcassets */,
-				FF4CB147283F5CE500E32F04 /* LaunchScreen.storyboard */,
-				FF4CB14A283F5CE500E32F04 /* Info.plist */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		FFD309ED285085230067DB7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				FF4CB150283F5EFF00E32F04 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFD309EE2850B8E40067DB7E /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FFD309F22850B9310067DB7E /* REST */,
+				FFD309F12850B9250067DB7E /* Endpoint */,
+				FFD309F02850B91B0067DB7E /* Error */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		FFD309EF2850B8F20067DB7E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
 				FF4CB152283F5F0C00E32F04 /* AppSettings.swift */,
-				FF4CB154283F5F1700E32F04 /* Endpoint.swift */,
-				FF4CB156283F5F2600E32F04 /* RESTClient.swift */,
-				FF4CB158283F5F3600E32F04 /* EndpointClient.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FFD309F02850B91B0067DB7E /* Error */ = {
+			isa = PBXGroup;
+			children = (
 				FF4CB15A283F5F5700E32F04 /* EndpointClientError.swift */,
 				FF4CB15C283F5F6500E32F04 /* ServerError.swift */,
 			);
-			path = JSON;
+			path = Error;
+			sourceTree = "<group>";
+		};
+		FFD309F12850B9250067DB7E /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				FF4CB154283F5F1700E32F04 /* Endpoint.swift */,
+				FF4CB158283F5F3600E32F04 /* EndpointClient.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		FFD309F22850B9310067DB7E /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				FF4CB156283F5F2600E32F04 /* RESTClient.swift */,
+			);
+			path = REST;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,7 +413,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4Q633P5RZ5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JSON/Info.plist;
+				INFOPLIST_FILE = JSON/Resources/Configs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -345,7 +441,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4Q633P5RZ5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JSON/Info.plist;
+				INFOPLIST_FILE = JSON/Resources/Configs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
