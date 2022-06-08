@@ -50,16 +50,6 @@ final class GetNameEndpoint: ObjectResponseEndpoint<Cards> {
     
 }
 
-
-
-
-
-
-
-
-
-
-
 func decodeJSONOld() {
     let str = """
         {\"team\": [\"ios\", \"android\", \"backend\"]}
